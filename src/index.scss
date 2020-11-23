@@ -1,0 +1,36 @@
+$fontColor: #264065;
+$bgColor: linear-gradient(102deg,
+rgba(241, 241, 240, 1) 0%,
+rgba(232, 231, 230, 1) 100%);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $fontColor;
+    font-family: -apple-system,"Noto Sans";
+    background: $bgColor;
+}
