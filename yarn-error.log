@@ -22,6 +22,7 @@ npm manifest:
       "build": "vite build"
     },
     "dependencies": {
+      "sass": "^1.29.0",
       "vue": "^3.0.0-rc.1",
       "vue-router": "4.0.0-beta.13"
     },
@@ -455,6 +456,20 @@ Lockfile:
     dependencies:
       ansi-styles "^4.1.0"
       supports-color "^7.1.0"
+  
+  "chokidar@>=2.0.0 <4.0.0":
+    version "3.4.3"
+    resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.3.tgz#c1df38231448e45ca4ac588e6c79573ba6a57d5b"
+    dependencies:
+      anymatch "~3.1.1"
+      braces "~3.0.2"
+      glob-parent "~5.1.0"
+      is-binary-path "~2.1.0"
+      is-glob "~4.0.1"
+      normalize-path "~3.0.0"
+      readdirp "~3.5.0"
+    optionalDependencies:
+      fsevents "~2.1.2"
   
   chokidar@^3.3.1:
     version "3.4.2"
@@ -1461,6 +1476,12 @@ Lockfile:
     dependencies:
       picomatch "^2.2.1"
   
+  readdirp@~3.5.0:
+    version "3.5.0"
+    resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.5.0.tgz#9ba74c019b15d365278d2e91bb8c48d7b4d42c9e"
+    dependencies:
+      picomatch "^2.2.1"
+  
   requires-port@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
@@ -1547,6 +1568,12 @@ Lockfile:
   safe-buffer@^5.1.0:
     version "5.2.1"
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  
+  sass@^1.29.0:
+    version "1.29.0"
+    resolved "https://registry.yarnpkg.com/sass/-/sass-1.29.0.tgz#ec4e1842c146d8ea9258c28c141b8c2b7c6ab7f1"
+    dependencies:
+      chokidar ">=2.0.0 <4.0.0"
   
   selfsigned@^1.10.7:
     version "1.10.8"
@@ -1803,7 +1830,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
+  Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c vite
   Directory: D:\myDemo\Vue-learn\FlyVue3
