@@ -33,7 +33,7 @@ export default {
     TopNav,
   },
   setup(){
-      const asideVisible = inject<Ref<boolean>>('xxx');
+      const asideVisible = inject<Ref<boolean>>('asideVisible');
       return {asideVisible}
   }
 };
