@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 .topnav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 100px;
   align-items: center;
   padding: 16px;
@@ -36,13 +36,21 @@ export default {
   position: relative;
   z-index: 10;
   .logo {
-    margin-left: 100px;
+    margin-right: auto;
   }
   .menu {
       display: flex;
       margin-right: 100px;
       & > li:not(last) {
           margin-right: 30px;
+      }
+  }
+  @media (max-width: 500px) {
+      > .menu {
+          display: none;
+      }
+      > .logo {
+          margin: 0 auto;
       }
   }
 }
