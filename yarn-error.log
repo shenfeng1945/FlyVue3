@@ -22,11 +22,11 @@ npm manifest:
       "build": "vite build"
     },
     "dependencies": {
-      "sass": "^1.29.0",
       "vue": "^3.0.0-rc.1",
       "vue-router": "4.0.0-beta.13"
     },
     "devDependencies": {
+      "sass": "^1.29.0",
       "@vue/compiler-sfc": "^3.0.0-rc.1",
       "vite": "^1.0.0-rc.1"
     }
@@ -1830,7 +1830,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit code: 3221225786
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c vite
   Directory: D:\myDemo\Vue-learn\FlyVue3
