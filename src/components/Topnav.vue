@@ -1,8 +1,10 @@
 <template>
   <div class="topnav">
+    <svg class="icon" @click="toggleAside">
+      <use xlink:href="#i-menu"></use>
+    </svg>
     <div class="logo">
-      <div @click="toggleAside">LOGO</div>
-     <!-- <router-link to="/">LOGO</router-link> -->
+      <router-link to="/">LOGO</router-link>
     </div>
     <ul class="menu">
       <li>菜单1</li>
@@ -12,17 +14,17 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue'
+import { inject, Ref } from "vue";
+import "../assets/iconfont";
 export default {
-    setup(){
-        const asideVisible = inject<Ref<boolean>>('asideVisible')
-        console.log('topnav 获取的', asideVisible.value);
-        const toggleAside = () => {
-            asideVisible.value = !asideVisible.value;
-        }
-        return {toggleAside}
-    },
-}
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    const toggleAside = () => {
+      asideVisible.value = !asideVisible.value;
+    };
+    return { toggleAside };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -32,26 +34,34 @@ export default {
   height: 100px;
   align-items: center;
   padding: 16px;
-  background: #FFC6CD;
+  background: #ffc6cd;
   position: relative;
   z-index: 10;
+  .icon {
+    display: none;
+  }
   .logo {
     margin-right: auto;
   }
   .menu {
-      display: flex;
-      margin-right: 100px;
-      & > li:not(last) {
-          margin-right: 30px;
-      }
+    display: flex;
+    margin-right: 100px;
+    & > li:not(last) {
+      margin-right: 30px;
+    }
   }
   @media (max-width: 500px) {
-      > .menu {
-          display: none;
-      }
-      > .logo {
-          margin: 0 auto;
-      }
+    > .icon {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
   }
 }
 </style>

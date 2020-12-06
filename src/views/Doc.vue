@@ -25,38 +25,40 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue';
+import { inject, Ref } from "vue";
 import TopNav from "../components/Topnav.vue";
 export default {
   name: "Doc",
   components: {
     TopNav,
   },
-  setup(){
-      const asideVisible = inject<Ref<boolean>>('asideVisible');
-      return {asideVisible}
-  }
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    return { asideVisible };
+  },
 };
 </script>
 
 <style lang="scss">
-    .content{
-        aside {
-            background: #AAD4E9;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 150px;
-            padding: 16px;
-            padding-top: 100px;
-            > h2 {
-                margin-bottom: 4px;
-            }
-            > ol {
-                > li {
-                    padding: 4px 0;
-                }
-            }
-        }
+.content {
+  aside {
+    background: #aad4e9;
+    width: 150px;
+    padding: 16px;
+    > h2 {
+      margin-bottom: 4px;
     }
+    > ol {
+      > li {
+        padding: 4px 0;
+      }
+    }
+    @media (max-width: 500px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 116px;
+    }
+  }
+}
 </style>
