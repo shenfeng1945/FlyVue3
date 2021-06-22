@@ -2,23 +2,7 @@
   <div>
     <TopNav />
     <div class="content">
-      <aside v-if="asideVisible">
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/switch">Switch组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs组件</router-link>
-          </li>
-        </ol>
-      </aside>
+      <Aside v-if="asideVisible"/>
       <main>
           <router-view />
       </main>
@@ -29,10 +13,12 @@
 <script lang="ts">
 import { inject, Ref } from "vue";
 import TopNav from "../components/Topnav.vue";
+import Aside from './Aside.vue';
 export default {
   name: "Doc",
   components: {
     TopNav,
+    Aside
   },
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
@@ -41,26 +27,23 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import '../index.scss';
 .content {
-  aside {
-    background: #aad4e9;
-    width: 150px;
-    padding: 16px;
-    > h2 {
-      margin-bottom: 4px;
-    }
-    > ol {
-      > li {
-        padding: 4px 0;
+  display: flex;
+  padding-top: $topNavHeightPC;
+  background: #fff;
+  height: 100vh;
+  @media (max-width: 500px) {
+    padding-top: $topNavHeightPhone;
+  }
+  main {
+      flex: 1;
+      padding: 16px;
+      margin-left: 300px;
+      @media (max-width: 500px) {
+        margin-left: 0;
       }
-    }
-    @media (max-width: 500px) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding-top: 116px;
-    }
   }
 }
 </style>
